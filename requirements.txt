@@ -1,7 +1,5 @@
 streamlit==1.25.0
 transformers==4.32.0
 torch>=2.0,<3.0
-tensorflow==2.16.2
-numpy>=1.26.0
-pillow==9.5.0
-tokenizers==0.13.3
+google-generativeai
+textblob
