@@ -5,6 +5,20 @@ import torch
 from google.api_core import exceptions as google_exceptions
 import time
 from textblob import TextBlob
+import subprocess
+import sys
+
+def install_rust():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "rustup-init"])
+        subprocess.check_call(["rustup-init", "-y"])
+        # Add Rust to PATH
+        import os
+        os.environ["PATH"] += os.pathsep + os.path.expanduser("~/.cargo/bin")
+    except Exception as e:
+        print(f"Failed to install Rust: {e}")
+
+install_rust()
 
 # Set your Gemini API key
 genai.configure(api_key='AIzaSyCv6jdoUC3YslqkNj42YNZEhjtWmbBkYEM')

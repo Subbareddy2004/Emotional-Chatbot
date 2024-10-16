@@ -3,3 +3,5 @@ transformers==4.32.0
 torch>=2.0,<3.0
 google-generativeai
 textblob
+pillow==9.5.0
+tokenizers==0.13.3
